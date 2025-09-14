@@ -1,0 +1,49 @@
+Database - collection of data in a format that can be accessed 
+database management system - software application used to manage our database
+   user ----> dbms ----> db
+(uses sql)
+
+types of database:
+Relational db: data stored in tables, eg: MySQL, PostgreSQL, ORACLE, mariaDB
+Non-Relational db: data not stored in tables, eg: mongodb
+_____________________________________________________________________________________________
+SQL - Structured Query Language
+used to interact with relational databases
+
+it is used to perform - CRUD operations on db -> create, read, update, delete
+
+database has tables
+tables has rows and columns(schema)
+_____________________________________________________________________________________________
+SQL queries
+
+create database dbname;     //create db
+show databases;             //displays list of dbs 
+drop database dbname;       //delete db
+use dbname;                 //shifts to db dbname
+
+creating tables:
+    create table tablename(
+        col1 datatype constraints,
+        col2 datatype constraints,
+        col3 datatype constraints,
+    );
+    eg:
+    create table student(
+        id int primay key,
+        name varchar(50),
+        age int not null,
+    );
+show tables;                //displays list tables
+describe tablename;         //schema of the table
+
+inserting data into table:
+    insert into student values(1,"batman",22),(2,"bhuvan",22);
+
+datatypes in sql:
+char - fixed memory allocation used or not, max size - 255, eg: char(50)
+varchar - variable memory allocation until mentioned size, max size - 255, eg: varchar(50)
+blob - stores large binary object, max size - 65535, eg:blob(1000)
+int - stores integer, eg: int
+tinyint - stores -128 to 127
+bigint - stores -9223372036854775808 to 9223372036854775807

@@ -1,0 +1,11 @@
+Syllabus CS and DA :
+	General Aptitude - 15m - 5*2m +5*1m
+	Subject related sections -
+		digital logic - booleam algebra, cominational and sequential circuits, minimization, number representations, computer arithmetic
+	Mathematics - 
+		Discrete mathematics - propsitional logic, set theory, relations, functions, graphs, combinatorics(PC)
+		Linear algebra - Matrices, determinants, eigen values and eigen vectors
+		Calculus - limits , continuity, differentiation, integration
+		Probability - random variables, probability distribution, mean, median , mode, std deviation, conditional probability, bayes theorem
+		graph theory
+		
