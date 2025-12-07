@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+
+//we caa write c and cpp program in .cpp file
 int main()
 {
     cout << "Hello World" << endl
@@ -46,3 +48,5 @@ int main()
 
     return 0;
 }
+//compile c++ : g++ p.cpp 
+//compile c : gcc p.c
