@@ -2,6 +2,7 @@
 //reference variable - alias to another variable, only in cpp
 //reference must be initialised during declaration
 //used in function parameter passing to avoid copying large data
+//references donot occupy separate memory
 using namespace std;
 int main(){
 
