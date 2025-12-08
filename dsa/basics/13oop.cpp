@@ -58,6 +58,7 @@ class Rectangle{
     int breadth;
     // constructor
     public: // member functions are public by default
+        //constructor is a special member function with same name as class, no return type, called automatically during object creation
         Rectangle(){ // default constructor
             length = 0;
             breadth = 0;
