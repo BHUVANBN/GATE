@@ -1,0 +1,26 @@
+Physical Datastructures- decides how the memory is handled  - Array, LinkedList
+Logical Datastructures- implemented using Physical Datastructures, - Stack , Queues, Trees, Graph, HashTables
+
+Datatype
+    representation of datatype
+    operation of datatype
+
+    eg: int - 1st bit is forn sign
+              operations - +,-,*,/,%
+
+ADT - Abstract Datatype
+eg: List - represented by array or LinkedList
+           operations - add, remove, search...
+
+a class with representation and operations becomes ADT
+
+TIME COMPLEXITY -Time required to complete the task
+here we use steps because different computer process in different Time
+    O(1)
+    O(logn)
+    O(n) - order of n 
+    O(nlogn)
+    O(n^2)
+    O(n!)
+
+SPACE COMPLEXITY - Space required for an algorithm
