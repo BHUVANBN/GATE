@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    int arr[5] = {1, 2, 3, 4, 5}; //array initialisation
+    int arr[15] = {1, 2, 3, 4, 5}; //array initialisation
     // printing array elements
     //int arrr[5]; //declaration of empty array - garbage values are stored 
     for (int i = 0; i < 5; i++)
@@ -17,7 +17,7 @@ int main()
     }
     printf("\nUsing for each loop:\n");
     for(int x: arr){ //for each loop
-        printf("%d ", x);
+        printf("%d ", x); //non assigned place of the array is filled with 0
     }   
     return 0;
 }

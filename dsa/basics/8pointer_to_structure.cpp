@@ -20,6 +20,7 @@ int main(){
     //creating object in heap memory using pointer - dynamic memory allocation
     struct Rectangle *ptr;
     ptr = (struct Rectangle*)malloc(sizeof(struct Rectangle)); //C style memory allocation
+    //ptr = new Rectangle; //cpp style
     ptr->length = 15; //accessing member using arrow operator
     ptr->breadth = 7;
     cout<< ptr->length<<endl;

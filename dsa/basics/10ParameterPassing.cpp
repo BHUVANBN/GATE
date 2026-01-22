@@ -28,21 +28,21 @@ int main(){
     int b = 10;
     cout<<"Before Swap: a = "<<a<<", b = "<<b<<endl;
     swapByValue(a,b);
-    cout<<"After Swap using Pass by Value: a = "<<a<<", b = "<<b<<endl; //values remain unchanged - swap happened only in function scope
+    cout<<"After Swap: a = "<<a<<", b = "<<b<<endl; //values remain unchanged - swap happened only in function scope
     
     printf("\nPass by Address\n");
     int x = 15;
     int y = 20;
     cout<<"Before Swap: x = "<<x<<", y = "<<y<<endl;
     swapByAddress(&x,&y);
-    cout<<"After Swap using Pass by Address: x = "<<x<<", y = "<<y<<endl; //values are changed - swap happened in main function scope
+    cout<<"After Swap: x = "<<x<<", y = "<<y<<endl; //values are changed - swap happened in main function scope
     
     printf("\nPass by Reference\n");
     int p = 25;
     int q = 30;
     cout<<"Before Swap: p = "<<p<<", q = "<<q<<endl;
     swapByReference(p,q);
-    cout<<"After Swap using Pass by Reference: p = "<<p<<", q = "<<q<<endl; //values are changed - swap happened in main function scope
+    cout<<"After Swap: p = "<<p<<", q = "<<q<<endl; //values are changed - swap happened in main function scope
 
     return 0;
 }

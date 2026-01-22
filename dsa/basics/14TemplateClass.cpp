@@ -10,8 +10,8 @@ class Arithmetic{
     T b;
     public:
         Arithmetic(T x, T y){
-            a = x;
-            b = y;
+            this->a = x; //this pointer refers to current object
+            this->b = y;
         }
         T add(){
             return a + b;
@@ -19,14 +19,13 @@ class Arithmetic{
         T subtract(){
             return a - b;
         }
-        T multiply();
+        T multiply(); //this method is implemented outside the class
 };
 template <class T> //template definition for member function outside class
 T Arithmetic<T>::multiply(){
     return a * b;
 }
 int main(){
-    
     Arithmetic<int> arInt(10, 5); //object creation for int type
     cout << "Integer Addition: " << arInt.add() << endl;
     cout << "Integer Subtraction: " << arInt.subtract() << endl;
@@ -38,3 +37,4 @@ int main(){
     cout << "Float Multiplication: " << arFloat.multiply() << endl;
     return 0;
 }
+     
