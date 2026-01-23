@@ -23,7 +23,8 @@ operations -
 using namespace std;
 
 struct Array { //array with its properties
-    int *A;
+    //int *A;
+    int A[10]; //static array declaration for merging example
     int size;
     int length;
 };
@@ -224,9 +225,9 @@ int rearrange(struct Array *arr){ //time complexity O(n)
     return 0;
 }
 //Merging - merge two sorted arrays into a third sorted array
-Struct Array* mergeArray(struct Array arr1, struct Array arr2){ //time complexity O(n+m)
-    Struct Array *arr3 = new Struct Array;
-    arr3->A = new int[arr1.length + arr2.length];
+struct Array* mergeArray(struct Array arr1, struct Array arr2){ //time complexity O(n+m)
+    struct Array *arr3 = new struct Array;
+
     int i=0, j=0, k=0;
     while(i<arr1.length && j<arr2.length){
         if(arr1.A[i]<arr2.A[j]){
@@ -246,6 +247,77 @@ Struct Array* mergeArray(struct Array arr1, struct Array arr2){ //time complexit
     arr3->size = arr1.size + arr2.size;
     return arr3;
 }
+//Set operations on arrays -
+//Union - combine elements of both arrays without duplicates
+//Intersection - common elements in both arrays
+//Difference - elements in first array not in second array
+struct Array* unionArray(struct Array arr1, struct Array arr2){
+    struct Array *arr3 = new struct Array;
+    int i=0, j=0, k=0;
+    while(i<arr1.length && j<arr2.length){
+        if(arr1.A[i]<arr2.A[j]){
+            arr3->A[k++] = arr1.A[i++];
+        }
+        else if(arr2.A[j]<arr1.A[i]){
+            arr3->A[k++] = arr2.A[j++];
+        }
+        else{
+            arr3->A[k++] = arr1.A[i++];
+            j++;
+        }
+    }
+    for(; i<arr1.length; i++){
+        arr3->A[k++] = arr1.A[i];
+    }
+    for(; j<arr2.length; j++){
+        arr3->A[k++] = arr2.A[j];
+    }
+    arr3->length = k;
+    arr3->size = arr1.size + arr2.size;
+    return arr3;
+}
+struct Array* intersectionArray(struct Array arr1, struct Array arr2){
+    struct Array *arr3 = new struct Array;
+    int i=0, j=0, k=0;
+    while(i<arr1.length && j<arr2.length){
+        if(arr1.A[i]<arr2.A[j]){
+            i++;
+        }
+        else if(arr2.A[j]<arr1.A[i]){
+            j++;
+        }
+        else{
+            arr3->A[k++] = arr1.A[i++];
+            j++;
+        }
+    }
+    arr3->length = k;
+    arr3->size = (arr1.size < arr2.size) ? arr1.size : arr2.size;
+    return arr3;
+}
+struct Array* differenceArray(struct Array arr1, struct Array arr2){
+    struct Array *arr3 = new struct Array;
+    int i=0, j=0, k=0;
+    while(i<arr1.length && j<arr2.length){
+        if(arr1.A[i]<arr2.A[j]){
+            arr3->A[k++] = arr1.A[i++];
+        }
+        else if(arr2.A[j]<arr1.A[i]){
+            j++;
+        }
+        else{
+            i++;
+            j++;
+        }
+    }
+    for(; i<arr1.length; i++){
+        arr3->A[k++] = arr1.A[i];   
+    }
+    arr3->length = k;
+    arr3->size = arr1.size;
+    return arr3;
+}
+
 int main(){
     // struct Array arr;
     // int n, i;
@@ -287,9 +359,25 @@ int main(){
     struct Array arr1 = {{2,4,6,8,10}, 10, 5};
     struct Array arr2 = {{1,3,5,7,9}, 10, 5};
     struct Array *arr3 = mergeArray(arr1, arr2);
-    cout<<"Merged array: ";
+    cout<<"Merged array: \n";
     display(*arr3);
 
+    //Set operations 
+    struct Array arr4 = {{2,4,6,8,10}, 10, 5};
+    struct Array arr5 = {{4,8,12,16}, 10, 4};
+    
+    struct Array *arr6 = unionArray(arr4, arr5);
+    cout<<"Union of arrays: \n";
+    display(*arr6);
+    
+    struct Array *arr7 = intersectionArray(arr4, arr5);
+    cout<<"Intersection of arrays: \n";
+    display(*arr7);
+
+    struct Array *arr8 = differenceArray(arr4, arr5);
+    cout<<"Difference of arrays (arr4 - arr5): \n";
+    display(*arr8);
+    
     //delete[] arr.A; // Free allocated memory
     return 0;
 }
