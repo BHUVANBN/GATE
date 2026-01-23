@@ -112,6 +112,37 @@ int BinarySearchRecursive(struct Array arr, int l, int h, int key){ //binary sea
     }
     return -1; //element not found
 }
+int get(struct Array arr, int index){ //get value at given index, time complexity O(1)
+    if(index>=0 && index<arr.length){
+        return arr.A[index];
+    }
+    return -1; //invalid index
+}
+int set(struct Array *arr, int index, int value){ //set value at given index or replace, time complexity O(1)
+    if(index>=0 && index<arr->length){
+        arr->A[index] = value;
+        return 1; //success
+    }
+    return 0; //invalid index
+}
+int Max(struct Array arr){ //find max element, time complexity O(n)
+    int max = arr.A[0];
+    for(int i=1; i<arr.length; i++){
+        if(arr.A[i]>max){
+            max = arr.A[i];
+        }
+    }
+    return max;
+}
+int Min(struct Array arr){ //find min element, time complexity O(n)
+    int min = arr.A[0];
+    for(int i=1; i<arr.length; i++){
+        if(arr.A[i]<min){
+            min = arr.A[i];
+        }
+    }
+    return min;
+}
 int main(){
     struct Array arr;
     int n, i;
