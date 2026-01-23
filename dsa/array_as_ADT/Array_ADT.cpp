@@ -143,12 +143,15 @@ int Min(struct Array arr){ //find min element, time complexity O(n)
     }
     return min;
 }
-int sum(struct Array arr){
+int sum(struct Array arr){ //sum of all elements, time complexity O(n)
     int sum = 0;
     for(int i=0; i<arr.length; i++){
         sum +=arr.A[i];
     }
     return sum;
+}
+int average(struct Array arr){ //average of all elements, time complexity O(n)
+    return sum(arr)/arr.length;
 }
 int main(){
     struct Array arr;
