@@ -1,7 +1,8 @@
 //static variable in recursion is a variable that retains its value between function calls.
 #include<stdio.h>
 using namespace std;
-
+//local variable - for every function call, a new copy of the variable is created and destroyed when the function returns.
+//static variable - only one copy of the variable is created and retains its value between function calls.
 int fun(int n){ //no static variable
     if(n>0){
         return fun(n-1)+n;
