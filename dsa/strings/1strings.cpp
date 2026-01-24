@@ -41,9 +41,26 @@ int main() {
     char str1[] = {'h','e','l','l','o','\0'}; // string initialization 
     char str2[] = "hello"; // string initialization using double quotes, compiler automatically adds null character at the end
     cout << "String 1: " << str1 << endl;
-    printf("String 1 using printf: %s\n", str1);
+    printf("String 1 using printf: %s\n", str1); //%s format specifier to print string using printf
     cout << "String 2: " << str2 << endl;
     printf("String 2 using printf: %s\n", str2);
 
+    //string as input
+    char str3[20]; // character array of size 20
+    cout << "Enter a string: ";
+    cin >> str3; // input string, stops at whitespace
+    cout << "You entered: " << str3 << endl;
+    
+    char str4[50];
+    printf("Enter another string: ");
+    scanf("%s", str4); // input string using scanf. stops at whitespace
+    //to read string with spaces, we can use fgets() or cin.getline()
+    printf("You entered: %s\n", str4);
+
+    //to take string input with spaces using cin.getline()
+    char str5[100];
+    cout << "Enter a string with spaces: ";
+    cin.getline(str5, 100); // reads a line of text including spaces
+    cout << "You entered: " << str5 << endl;
     return 0;
 }
