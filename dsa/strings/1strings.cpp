@@ -60,7 +60,14 @@ int main() {
     //to take string input with spaces using cin.getline()
     char str5[100];
     cout << "Enter a string with spaces: ";
+    cin.ignore(); // to ignore the leftover newline character from previous input
     cin.getline(str5, 100); // reads a line of text including spaces
     cout << "You entered: " << str5 << endl;
+
+    char str6[100];
+    printf("Enter another string with spaces: ");
+    fgets(str6, 100, stdin); // reads a line of text including spaces
+    printf("You entered: %s", str6); // fgets() retains the newline character
+    
     return 0;
 }
