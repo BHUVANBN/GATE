@@ -3,8 +3,10 @@
 using namespace std;
 
 int main(){
+    //condition - there must be no duplicate characters in the string
+    //if there are duplicate use a array instead of mask, and increment the count of each character
     char str1[] = "decimal";
-    char str2[] = "medizal";
+    char str2[] = "medical";
 
     int mask = 0; 
     
