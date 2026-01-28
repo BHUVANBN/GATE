@@ -74,6 +74,7 @@ class CLinkedList{
             return len;
         }
         int Delete(int index){
+            if(index<1||index>Length()) return -1;
             Node *p = head;
             Node *q = NULL;
             if(index==1){
@@ -107,7 +108,7 @@ int main(){
     cl.Insert(3,12);
     cl.Display();
 
-    cl.Delete(1);
+    cout<<"deleted element: "<<cl.Delete(1)<<endl;
     cl.Display();
     return 0;
 }
