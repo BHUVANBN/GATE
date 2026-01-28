@@ -12,6 +12,7 @@ class LinkedList{
     public:
         LinkedList(){first =NULL;}
         LinkedList(int A[], int n){
+            first = new Node;
             first->data = A[0]; //create first node with data and null
             first->next = NULL;
             Node *last = first; //last pointer to keep track of the last node
@@ -73,11 +74,16 @@ class LinkedList{
                 return -1;
             }
             Node *p = first;
-            for(int i=0;i<index;i++){
+            Node *q = NULL;
+            for(int i=1;i<index;i++){
+                q=p;
                 p = p->next;
             }
             int x = p->data;
+            q->next = p->next;
+            p->next = NULL;
             delete p;
+
             return x;
         }
         
@@ -86,5 +92,7 @@ int main(){
     int A[] = {1,2,3,4,5};
     LinkedList ll(A,5);
     ll.Display();
+
+    cout<<"element deleted is: "<<ll.Delete(4);
     return 0;
 }
