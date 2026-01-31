@@ -164,7 +164,13 @@ class Tree{
             return 0; //0 is returned for null node
         }
     }
-    
+    //conditions for counting nodes
+    /*
+    external node/leaf node(degree 0 node) - if(!p->lchild && !p->rchild)
+    degree 2 node -                          if(p->lchild && p->rchild)
+    internal nodes (degree 1 or 2 node) -    if(p->lchild || p->rchild)
+    degree 1 node -                          if((p->lchild != NULL && p->rchild == NULL) || (p->lchild == NULL && p->rchild != NULL))
+    */
     int countLeaf(Node *p){
         if(p == NULL){
             return 0;
