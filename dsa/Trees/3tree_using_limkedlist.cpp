@@ -6,6 +6,7 @@
 
 #include<iostream>
 using namespace std;
+
 //Node class
 class Node{
     public:
@@ -99,6 +100,7 @@ class Tree{
             }
         }
     }
+    //tree traversals
     void preOrder(Node *p){
         if(p){
             cout<<p->data<<" ";
@@ -120,22 +122,27 @@ class Tree{
             cout<<p->data<<" ";
         }
     }
-    void levelOrder(Node *p){
+    void levelOrder(Node *p){ //using queue to store nodes traversed so that we can access them later
         Queue q(100);
-        cout<<p->data<<" ";
-        q.enqueue(p);
+        cout<<p->data<<" "; //root node
+        q.enqueue(p);       //push root node into queue to track nodes traveresed
         while(!q.isEmpty()){
-            p = q.dequeue();
-            if(p->lchild){
+            p = q.dequeue(); //pop node from queue
+            if(p->lchild){   //if left child exists
                 cout<<p->lchild->data<<" ";
-                q.enqueue(p->lchild);
+                q.enqueue(p->lchild); //push left child into queue to track nodes traveresed
             }
-            if(p->rchild){
+            if(p->rchild){   //if right child exists
                 cout<<p->rchild->data<<" ";
-                q.enqueue(p->rchild);
+                q.enqueue(p->rchild); //push right child into queue to track nodes traveresed
             }
         }
     }
+    //iterative tree traversals
+    //using stack to store nodes traversed so that we can access them later
+   
+    //tree properties
+    //height of tree is maximum level of tree
     int height(Node *p){
         int x = 0, y = 0;
         if(p == NULL){
@@ -152,9 +159,9 @@ class Tree{
     
     int count(Node *p){
         if(p){
-            return count(p->lchild) + count(p->rchild) + 1;
+            return count(p->lchild) + count(p->rchild) + 1; //1 is added for root node (current node)
         } else {
-            return 0;
+            return 0; //0 is returned for null node
         }
     }
     

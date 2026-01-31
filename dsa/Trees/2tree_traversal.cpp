@@ -1,9 +1,9 @@
 /*
 Tree Traversal - accessing each node in a tree
-1. Preorder - Root, Left, Right
-2. Inorder - Left, Root, Right
-3. Postorder - Left, Right, Root
-4. Levelorder - Level by level
+1. Preorder - Root, Left, Right    /_
+2. Inorder - Left, Root, Right     /\
+3. Postorder - Left, Right, Root    _\
+4. Levelorder - Level by level     
 
 eg:         A
            / \ 
