@@ -48,7 +48,6 @@ void merge1Array(int A[], int low, int high, int mid){
          2,3,4,5,6,7,8,9
 
 time complexity = O(n log n) //tree height = log n
-space complexity = O(n)
 */
 void mergeSortIterative(int A[], int n){
     int low, mid, high;
@@ -74,6 +73,8 @@ void mergeSortRecursive(int A[], int low, int high){
         merge1Array(A, low, high, mid);
     }
 }
+//time complexity = O(n log n)
+//space complexity = O(2n+log n) //2n for auxiliary array and log n for recursion stack
 int main(){
     int A[] = {11, 13, 45, 7, 23, 21, 15};
     int n = sizeof(A)/sizeof(A[0]);
