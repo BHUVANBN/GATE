@@ -11,7 +11,7 @@ pointer in stack      node1          node2          node3
 #include<iostream>
 using namespace std;
 
-struct Node{  //in c++ struct everything by default public, whereas in class everything by default in private
+struct Node{  //in c++ struct, everything by default public, whereas in class everything by default in private
     int data;
     struct Node *next; //self referential structure
 };
